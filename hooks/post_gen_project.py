@@ -18,13 +18,8 @@ def expand_module():
     old_root = Path(os.path.realpath(os.path.curdir))
     new_root = MODULE_NAME[1:] if MODULE_NAME.startswith(":") else MODULE_NAME
     new_root = old_root.parent/new_root.replace(":","/")
-    new_root.mkdir(parents=True, exist_ok=True)
-    for file in os.listdir(old_root):
-        src_path = old_root/file
-        dst_path = new_root/file
-        shutil.move(src_path, dst_path)
-    old_root.rmdir()
-    
+    shutil.copytree(old_root, new_root)
+    shutil.rmtree(old_root)
 
 def make_settings_entry():
     settings_gradle_path = Path("../settings.gradle.kts")
