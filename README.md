@@ -8,13 +8,9 @@
     ```
     pip install -U cookiecutter
     ```
-1. Clone this project
-    ```
-    git clone https://github.com/Kshitij09-sc/sc-feature-module-cookie.git
-    ```
 1. Generate android module using the template
     ```
-    cookiecutter sc-feature-module-cookie # path to repository clone
+    cookiecutter https://github.com/Kshitij09-sc/sc-feature-module-cookie
     ```
 1. Enter module name & package name as per given format
 1. CookieCutter will generate required module files and update `settings.gradle.kts` with given module name (if exists)
